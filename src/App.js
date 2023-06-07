@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import { LoginPage } from "./pages/Login";
+import { HomePage } from "./pages/Home";
+import { ProfilePage } from "./pages/Profile";
+ 
+import { ProtectedLayout } from "./components/ProtectedLayout";
+import { HomeLayout } from "./components/HomeLayout";
+import "./styles.css";
+import Setting from "./pages/Setting";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <Routes>
+      <Route element={<HomeLayout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Route>
 
-export default App;
+      <Route path="/dashboard" element={<ProtectedLayout />}>
+        <Route path="profile" element={<ProfilePage />} />
+        <Route path="settings" element={<Setting/>} />
+      </Route>
+    </Routes>
+  );
+} 
