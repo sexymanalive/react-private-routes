@@ -4,7 +4,7 @@ peline {
     stages {
         stage('Git Checkout') {
             steps {
-                echo "aura auraaaaaa"
+                echo "aura auraaaaaaaaaaaaaaaaaaaaaaaaaa"
                 echo "Hello world!"
                 echo  " Thank you so m uich "
             }
