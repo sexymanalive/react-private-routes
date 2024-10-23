@@ -5,7 +5,9 @@ pipeline {
         stage('Git Checkout') {
             steps {
                  sh """
-                 hello there 
+                   echo "Hellow orld  " 
+                   echo " T hank you so muc hbrother " 
+                   
                  """
         }
     }
