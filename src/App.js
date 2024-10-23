@@ -11,6 +11,7 @@ import Setting from "./pages/Setting";
 export default function App() {
   return (
     <Routes>
+      <h1> Hello World  </h1> 
       <Route element={<HomeLayout />}>
         <Route path="/hahaa" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
